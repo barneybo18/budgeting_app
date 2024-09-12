@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { UserButton, useUser } from "@clerk/nextjs";
-import CardInfo from "./_components/CardInfo";
+// import CardInfo from "./_components/CardInfo";
 // import { db } from "@/utils/dbConfig";
 import { desc, eq, getTableColumns, sql } from "drizzle-orm";
 // import { Budgets, Expenses, Incomes } from "@/utils/schema";
@@ -10,6 +10,7 @@ import BudgetItem from "./budgets/_components/BudgetItem";
 import ExpenseListTable from "./expenses/_components/ExpenseListTable";
 import { db } from "../../../../utils/dbConfig";
 import { Budgets, Expenses, Incomes } from "../../../../utils/schema";
+import Cardinfo from "./_components/Cardinfo";
 function Dashboard() {
   const { user } = useUser();
 
@@ -86,7 +87,7 @@ function Dashboard() {
         Here's what happenning with your money, Lets Manage your expense
       </p>
 
-      <CardInfo budgetList={budgetList} incomeList={incomeList} />
+      <Cardinfo budgetList={budgetList} incomeList={incomeList} />
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-5">
         <div className="lg:col-span-2">
           <BarChartDashboard budgetList={budgetList} />
